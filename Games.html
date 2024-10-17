@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Dress Up Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .game-container, .main-menu {
+            text-align: center;
+            width: 100%;
+        }
+
+        .main-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .main-menu img {
+            width: 500px;
+            height: auto;
+        }
+
+        .main-menu button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #6200ea;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .main-menu button:hover {
+            background-color: #3700b3;
+        }
+
+        .game-container {
+            display: none;
+        }
+
+        .base-container {
+            position: relative;
+            width: 500px;
+            height: 700px;
+            margin: 20px auto 0 auto;
+        }
+
+        .base-container img {
+            width: 500px;
+            height: auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .controls {
+            margin-top: 20px;
+        }
+
+        .category {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .character-section {
+            margin-bottom: 40px;
+        }
+
+        .category img {
+            width: 100px;
+            height: auto;
+            margin: 0.01px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 5px;
+        }
+
+        .category img:hover {
+            border-color: #3700b3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-menu">
+        <img src="Mainmenu.png" alt="Main Menu">
+        <button onclick="enterGame()">Play</button>
+    </div>
+
+    <div class="game-container">
+        <div class="base-container">
+            <img id="base-image" src="Base.png" alt="Base Image">
+
+            <!-- Kohlrabi's Clothing -->
+            <img id="underwear-k-image" src="Underweark.png" alt="Underwear Kohlrabi" style="visibility: visible;">
+            <img id="bodysuit-k-image" src="Bodysuitk.png" alt="Bodysuit Kohlrabi" style="visibility: hidden;">
+			<img id="bodysuit-k2-image" src="Bodysuitk2.png" alt="Bodysuit Kohlrabi" style="visibility: hidden;">
+			<img id="bodysuit-k3-image" src="Bodysuitk3.png" alt="Bodysuit Kohlrabi" style="visibility: hidden;">
+            <img id="top-k-image" src="Topk.png" alt="Top Kohlrabi" style="visibility: hidden;">
+            <img id="bottom-k-image" src="Bottomk.png" alt="Bottom Kohlrabi" style="visibility: hidden;">
+            <img id="shoes-k-image" src="Shoesk.png" alt="Shoes Kohlrabi" style="visibility: hidden;">
+            <img id="helmet-k-image" src="Helmetk.png" alt="Helmet Kohlrabi" style="visibility: hidden;">
+            <img id="accessory-k-image" src="Accessoryk.png" alt="Accessory Kohlrabi" style="visibility: hidden;">
+
+            <!-- Pepper Crash's Clothing -->
+            <img id="underwear-p-image" src="Underwearp.png" alt="Underwear Pepper Crash" style="visibility: visible;">
+            <img id="bodysuit-p-image" src="Bodysuitp.png" alt="Bodysuit Pepper Crash" style="visibility: hidden;">
+			<img id="bodysuit-p2-image" src="Bodysuitp2.png" alt="Bodysuit Pepper Crash2" style="visibility: hidden;">
+			<img id="bodysuit-p3-image" src="Bodysuitp3.png" alt="Bodysuit Pepper Crash2" style="visibility: hidden;">
+            <img id="top-p-image" src="Topp.png" alt="Top Pepper Crash" style="visibility: hidden;">
+            <img id="bottom-p-image" src="Bottomp.png" alt="Bottom Pepper Crash" style="visibility: hidden;">
+            <img id="shoes-p-image" src="Shoesp.png" alt="Shoes Pepper Crash" style="visibility: hidden;">
+            <img id="helmet-p-image" src="Helmetp.png" alt="Helmet Pepper Crash" style="visibility: hidden;">
+            <img id="accessory-p-image" src="Accessoryp.png" alt="Accessory Pepper Crash" style="visibility: hidden;">
+
+            <!-- Lemon Zest's Clothing -->
+            <img id="underwear-l-image" src="Underwearl.png" alt="Underwear Lemon Zest" style="visibility: visible;">
+            <img id="bodysuit-l-image" src="Bodysuitl.png" alt="Bodysuit Lemon Zest" style="visibility: hidden;">
+			<img id="bodysuit-l2-image" src="Bodysuitl2.png" alt="Bodysuit Lemon Zest2" style="visibility: hidden;">
+			<img id="bodysuit-l3-image" src="Bodysuitl3.png" alt="Bodysuit Lemon Zest3" style="visibility: hidden;">
+            <img id="top-l-image" src="Topl.png" alt="Top Lemon Zest" style="visibility: hidden;">
+            <img id="bottom-l-image" src="Bottoml.png" alt="Bottom Lemon Zest" style="visibility: hidden;">
+            <img id="shoes-l-image" src="Shoesl.png" alt="Shoes Lemon Zest" style="visibility: hidden;">
+            <img id="helmet-l-image" src="Helmetl.png" alt="Helmet Lemon Zest" style="visibility: hidden;">
+            <img id="accessory-l-image" src="Accessoryl.png" alt="Accessory Lemon Zest" style="visibility: hidden;">
+        </div>
+
+        <div class="controls">
+            <!-- Kohlrabi Section -->
+            
+                </div>
+            </div>
+<!-- Kohlrabi Section -->
+<div class="character-section">
+    <h2>Kohlrabi's Clothing</h2>
+
+    <!-- Underwear -->
+    <div class="category">
+        <h3>Underwear</h3>
+        <img src="Underwearkb.png" alt="Underwear Kohlrabi Button" onclick="toggleClothing('underwear-k-image')">
+    </div>
+
+    <!-- Bodysuits -->
+    <div class="category">
+        <h3>Bodysuit</h3>
+        <img src="Bodysuitkb.png" alt="Bodysuit Kohlrabi Button" onclick="toggleClothing('bodysuit-k-image')">
+        <img src="Bodysuitk2b.png" alt="Bodysuit Kohlrabi 2 Button" onclick="toggleClothing('bodysuit-k2-image')">
+        <img src="Bodysuitk3b.png" alt="Bodysuit Kohlrabi 3 Button" onclick="toggleClothing('bodysuit-k3-image')">
+    </div>
+
+    <!-- Tops -->
+    <div class="category">
+        <h3>Top</h3>
+        <img src="Topkb.png" alt="Top Kohlrabi Button" onclick="toggleClothing('top-k-image')">
+    </div>
+
+    <!-- Bottoms -->
+    <div class="category">
+        <h3>Bottom</h3>
+        <img src="Bottomkb.png" alt="Bottom Kohlrabi Button" onclick="toggleClothing('bottom-k-image')">
+    </div>
+
+    <!-- Shoes -->
+    <div class="category">
+        <h3>Shoes</h3>
+        <img src="Shoeskb.png" alt="Shoes Kohlrabi Button" onclick="toggleClothing('shoes-k-image')">
+    </div>
+
+    <!-- Helmet -->
+    <div class="category">
+        <h3>Helmet</h3>
+        <img src="Helmetkb.png" alt="Helmet Kohlrabi Button" onclick="toggleClothing('helmet-k-image')">
+    </div>
+
+    <!-- Accessory -->
+    <div class="category">
+        <h3>Accessory</h3>
+        <img src="Accessorykb.png" alt="Accessory Kohlrabi Button" onclick="toggleClothing('accessory-k-image')">
+    </div>
+</div>
+
+<!-- Pepper Crash Section -->
+<div class="character-section">
+    <h2>Pepper Crash's Clothing</h2>
+
+    <!-- Underwear -->
+    <div class="category">
+        <h3>Underwear</h3>
+        <img src="Underwearpb.png" alt="Underwear Pepper Crash Button" onclick="toggleClothing('underwear-p-image')">
+    </div>
+
+    <!-- Bodysuits -->
+    <div class="category">
+        <h3>Bodysuit</h3>
+        <img src="Bodysuitpb.png" alt="Bodysuit Pepper Crash Button" onclick="toggleClothing('bodysuit-p-image')">
+        <img src="Bodysuitp2b.png" alt="Bodysuit Pepper Crash 2 Button" onclick="toggleClothing('bodysuit-p2-image')">
+        <img src="Bodysuitp3b.png" alt="Bodysuit Pepper Crash 3 Button" onclick="toggleClothing('bodysuit-p3-image')">
+    </div>
+
+    <!-- Tops -->
+    <div class="category">
+        <h3>Top</h3>
+        <img src="Toppb.png" alt="Top Pepper Crash Button" onclick="toggleClothing('top-p-image')">
+    </div>
+
+    <!-- Bottoms -->
+    <div class="category">
+        <h3>Bottom</h3>
+        <img src="Bottompb.png" alt="Bottom Pepper Crash Button" onclick="toggleClothing('bottom-p-image')">
+    </div>
+
+    <!-- Shoes -->
+    <div class="category">
+        <h3>Shoes</h3>
+        <img src="Shoespb.png" alt="Shoes Pepper Crash Button" onclick="toggleClothing('shoes-p-image')">
+    </div>
+
+    <!-- Helmet -->
+    <div class="category">
+        <h3>Helmet</h3>
+        <img src="Helmetpb.png" alt="Helmet Pepper Crash Button" onclick="toggleClothing('helmet-p-image')">
+    </div>
+
+    <!-- Accessory -->
+    <div class="category">
+        <h3>Accessory</h3>
+        <img src="Accessorypb.png" alt="Accessory Pepper Crash Button" onclick="toggleClothing('accessory-p-image')">
+    </div>
+</div>
+
+<!-- Lemon Zest Section -->
+<div class="character-section">
+    <h2>Lemon Zest's Clothing</h2>
+
+    <!-- Underwear -->
+    <div class="category">
+        <h3>Underwear</h3>
+        <img src="Underwearlb.png" alt="Underwear Lemon Zest Button" onclick="toggleClothing('underwear-l-image')">
+    </div>
+
+    <!-- Bodysuits -->
+    <div class="category">
+        <h3>Bodysuit</h3>
+        <img src="Bodysuitlb.png" alt="Bodysuit Lemon Zest Button" onclick="toggleClothing('bodysuit-l-image')">
+        <img src="Bodysuitl2b.png" alt="Bodysuit Lemon Zest 2 Button" onclick="toggleClothing('bodysuit-l2-image')">
+        <img src="Bodysuitl3b.png" alt="Bodysuit Lemon Zest 3 Button" onclick="toggleClothing('bodysuit-l3-image')">
+    </div>
+
+    <!-- Tops -->
+    <div class="category">
+        <h3>Top</h3>
+        <img src="Toplb.png" alt="Top Lemon Zest Button" onclick="toggleClothing('top-l-image')">
+    </div>
+
+    <!-- Bottoms -->
+    <div class="category">
+        <h3>Bottom</h3>
+        <img src="Bottomlb.png" alt="Bottom Lemon Zest Button" onclick="toggleClothing('bottom-l-image')">
+    </div>
+
+    <!-- Shoes -->
+    <div class="category">
+        <h3>Shoes</h3>
+        <img src="Shoeslb.png" alt="Shoes Lemon Zest Button" onclick="toggleClothing('shoes-l-image')">
+    </div>
+
+    <!-- Helmet -->
+    <div class="category">
+        <h3>Helmet</h3>
+        <img src="Helmetlb.png" alt="Helmet Lemon Zest Button" onclick="toggleClothing('helmet-l-image')">
+    </div>
+
+    <!-- Accessory -->
+    <div class="category">
+        <h3>Accessory</h3>
+        <img src="Accessorylb.png" alt="Accessory Lemon Zest Button" onclick="toggleClothing('accessory-l-image')">
+    </div>
+</div>
+
+<script>
+    function toggleClothing(itemId) {
+        const itemImage = document.getElementById(itemId);
+        const bodysuitIds = [
+            'bodysuit-k-image', 'bodysuit-k2-image', 'bodysuit-k3-image', 
+            'bodysuit-p-image', 'bodysuit-p2-image', 'bodysuit-p3-image', 
+            'bodysuit-l-image', 'bodysuit-l2-image', 'bodysuit-l3-image'
+        ];
+        const topBottomShoeIds = [
+            'top-k-image', 'bottom-k-image', 'shoes-k-image', 
+            'top-p-image', 'bottom-p-image', 'shoes-p-image', 
+            'top-l-image', 'bottom-l-image', 'shoes-l-image'
+        ];
+
+        // Check if the clicked item is a bodysuit
+        if (bodysuitIds.includes(itemId)) {
+            // Hide all top, bottom, and shoes
+            topBottomShoeIds.forEach(id => document.getElementById(id).style.visibility = 'hidden');
+        } else if (topBottomShoeIds.includes(itemId)) {
+            // Hide all bodysuits
+            bodysuitIds.forEach(id => document.getElementById(id).style.visibility = 'hidden');
+        }
+
+        // Toggle visibility of the selected item
+        itemImage.style.visibility = itemImage.style.visibility === 'visible' ? 'hidden' : 'visible';
+    }
+</script>
+			
+			
+			
+            
+        </div>
+    </div>
+
+    <script>
+        function enterGame() {
+            document.querySelector('.main-menu').style.display = 'none';
+            document.querySelector('.game-container').style.display = 'block';
+        }
+
+        // Function to toggle visibility of clothing items
+        function toggleClothing(itemId) {
+            const itemImage = document.getElementById(itemId);
+            const bodysuitIds = ['bodysuit-k-image', 'bodysuit-p-image', 'bodysuit-l-image'];
+            const topBottomShoeIds = ['top-k-image', 'bottom-k-image', 'shoes-k-image', 'top-p-image', 'bottom-p-image', 'shoes-p-image', 'top-l-image', 'bottom-l-image', 'shoes-l-image'];
+
+            // Check if the clicked item is a bodysuit
+            if (bodysuitIds.includes(itemId)) {
+                // Hide all top, bottom, and shoes
+                topBottomShoeIds.forEach(id => document.getElementById(id).style.visibility = 'hidden');
+            } else if (topBottomShoeIds.includes(itemId)) {
+                // Hide all bodysuits
+                bodysuitIds.forEach(id => document.getElementById(id).style.visibility = 'hidden');
+            }
+
+            // Toggle visibility of the selected item
+            itemImage.style.visibility = itemImage.style.visibility === 'visible' ? 'hidden' : 'visible';
+        }
+    </script>
+</body>
+</html>
